@@ -37,3 +37,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 **bundle gem crawlab_ruby_sdk.gemspec**
 **添加代码**
 **gem build**
+**gem install --local crawlab_ruby_sdk-0.1.0.gem**
