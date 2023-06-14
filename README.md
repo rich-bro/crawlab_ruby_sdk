@@ -34,3 +34,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/crawlab_ruby_sdk.
 
+**bundle gem crawlab_ruby_sdk.gemspec**
+**添加代码**
+**gem build**
