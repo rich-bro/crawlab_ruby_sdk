@@ -40,3 +40,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 **gem install --local crawlab_ruby_sdk-0.1.0.gem**
 
 curl -u ***** https://rubygems.org/api/v1/api_key.yaml # ***** 为你的用户名
+
+$ rake -T
+rake build    # Build blomming_api-0.3.7.gem into the pkg directory
+rake install  # Build and install blomming_api-0.3.7.gem into system gems
+rake release  # Create tag v0.3.7 and build and push blomming_api-0.3.7.gem to Rubygems
