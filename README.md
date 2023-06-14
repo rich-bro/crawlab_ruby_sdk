@@ -39,3 +39,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 **gem build**
 **gem install --local crawlab_ruby_sdk-0.1.0.gem**
 
+curl -u ***** https://rubygems.org/api/v1/api_key.yaml # ***** 为你的用户名
