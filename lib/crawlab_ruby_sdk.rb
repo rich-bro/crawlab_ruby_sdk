@@ -40,25 +40,6 @@ module CrawlabRubySdk
     sub_client = client.subscribe
 
     save(sub_client,[item])
-
-    # task_id = ENV["CRAWLAB_TASK_ID"]
-    # if task_id == nil || task_id == ""
-    #   task_id = "6486e256fa1cb07a47c09adf"
-    # end
-    # item = {"hello": "world","_tid":task_id}
-    # item["_tid"] = task_id
-    # item = Grpc::Result.new({"_tid":task_id,"name":"lala","age":"12"})
-
-    # data = Grpc::StreamMessageDataTask.new()
-    # # puts item
-
-    # data.task_id = task_id
-    # data.data.push(item)
-
-    # puts data
-    # msg = Grpc::StreamMessage.new(code:3,data:data.to_json)
-    # puts msg
-    # sub_client.Send([msg])    
   end
 
   def self.save_items(items=[])
