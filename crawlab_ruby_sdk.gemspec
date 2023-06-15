@@ -11,10 +11,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/rich-bro/crawlab_ruby_sdk"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  spec.add_dependency 'grpc'
-  spec.add_dependency 'google-protobuf'
-  spec.add_dependency 'json'
-  spec.add_dependency 'aliyun-sdk'
+  spec.add_dependency 'grpc','~> 1.55.0'
+  spec.add_dependency 'google-protobuf','~> 3.23.2'
+  spec.add_dependency 'json','~> 2.6.3'
+  spec.add_dependency 'aliyun-sdk','~> 0.8.0'
 
   spec.metadata["allowed_push_host"] = "https://github.com/rich-bro/crawlab_ruby_sdk"
 
