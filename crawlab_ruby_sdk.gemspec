@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'json','~> 2.6.3'
   spec.add_dependency 'aliyun-sdk','~> 0.8.0'
 
-  spec.metadata["allowed_push_host"] = "https://github.com/rich-bro/crawlab_ruby_sdk"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/rich-bro/crawlab_ruby_sdk"
