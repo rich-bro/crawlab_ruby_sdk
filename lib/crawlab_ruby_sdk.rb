@@ -107,4 +107,8 @@ module CrawlabRubySdk
   def self.save_file_to_oss(oss_path,file_path)
     OssServerClient.new.send(oss_path,file_path)
   end
+
+  def self.save_file_stream_to_oss(oss_path,stream)
+    OssServerClient.new.send_stream(oss_path,stream)
+  end
 end

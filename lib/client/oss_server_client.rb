@@ -50,4 +50,11 @@ class OssServerClient
 		bucket_url = bucket.object_url(oss_path)
 		return bucket_url
 	end
+
+	def send_stream(oss_path,stream)
+		bucket.put_object(oss_path){ |a| a << stream }
+
+		bucket_url = bucket.object_url(oss_path)
+		return bucket_url		
+	end
 end
