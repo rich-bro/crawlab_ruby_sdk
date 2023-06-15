@@ -5,7 +5,9 @@ def main
 	# CrawlabRubySdk.save_item({name: "haha",age:12})
 
 	# CrawlabRubySdk.save_items([{name: "haha",age:12},{name:"456",age:34}])
-
+	ENV.each do |k,v|
+		puts "#{k}=#{v}"
+	end
 
 	oss_path = "thinkthank_files/files/1123123123.pdf"
 	file_path = "/home/min/Downloads/RAND_RRA1218-2.pdf"

@@ -1,8 +1,8 @@
 require 'aliyun/oss'
 
 class OssServerClient
-	attr_accessor oss_client
-	attr_accessor bucket
+	attr_accessor :oss_client
+	attr_accessor :bucket
 
 	def initialize
 		get_oss_client
