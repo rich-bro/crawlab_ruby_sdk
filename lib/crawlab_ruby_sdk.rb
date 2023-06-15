@@ -9,15 +9,15 @@ def traverse_dir(file_path)
   end
 end
 
-PWD = File.expand_path("..", __FILE__)
+dir = File.expand_path("..", __FILE__)
 
-# puts PWD
+# puts dir
 
-traverse_dir(PWD+'/entity/stream_message_code_pb.rb')
-traverse_dir(PWD+'/entity/result_pb.rb')
-traverse_dir(PWD+'/entity/stream_message_pb.rb')
-traverse_dir(PWD+'/entity/stream_message_data_task_pb.rb')
-traverse_dir(PWD+'/client')
+traverse_dir(dir+'/entity/stream_message_code_pb.rb')
+traverse_dir(dir+'/entity/result_pb.rb')
+traverse_dir(dir+'/entity/stream_message_pb.rb')
+traverse_dir(dir+'/entity/stream_message_data_task_pb.rb')
+traverse_dir(dir+'/client')
 
 module CrawlabRubySdk
   class Error < StandardError; end

@@ -4,3 +4,5 @@ require PWD + "/lib/crawlab_ruby_sdk.rb"
 def main
 	CrawlabRubySdk.save_item({})
 end
+
+main
