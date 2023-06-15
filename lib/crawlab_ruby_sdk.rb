@@ -103,4 +103,8 @@ module CrawlabRubySdk
     end
     return task_id
   end
+
+  def self.save_file_to_oss(oss_path,file_path)
+    OssServerClient.new.send(oss_path,file_path)
+  end
 end
