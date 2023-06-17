@@ -90,9 +90,11 @@ module CrawlabRubySdk
     end
 
     data = {task_id: task_id,data:records}.to_json
+    data = data.encode("utf-8")
+    puts data
 
     data = data.encode('ASCII-8BIT', invalid: :replace, undef: :replace, replace: '')
-    # puts data
+    puts data
 
     msg = Grpc::StreamMessage.new(code:3,data:data)
 
