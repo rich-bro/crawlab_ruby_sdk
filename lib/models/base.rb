@@ -162,7 +162,7 @@ class BaseModel
 			return false
 		end		
 		fields_arr = fn.split(":")
-		if length_arr.size < 2
+		if fields_arr.size < 2
 			return false
 		end
 		fields_str = fields_arr[1]
@@ -170,15 +170,17 @@ class BaseModel
 		fields = fields_str.split(",")
 
 		begin
-			datas = json.parse(v)
+			datas = JSON.parse(v)
 			datas.each do |data|
 				fields.each do |field|
 					if data[field] == nil
+						puts "ERROR #{field} not Exist!"
 						return false
 					end
 				end
 			end
 		rescue StandardError => e
+			puts e
 			return false
 		end
 
