@@ -13,6 +13,11 @@ class Verify
 
 		kclass = Object.const_get $map_models[table_name]
 
+		items.each do |item|
+			if !kclass.new(item).verify
+				return false
+			end
+		end
 		return true
 	end
 

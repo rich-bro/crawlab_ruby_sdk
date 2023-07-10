@@ -27,7 +27,26 @@ class BaseModel
 		verify_keys = self.class.verify_keys
 
 		verify_keys.each do |key,fns|
-			
+			value = json_data[key.to_sym]
+			if fns.class.name == "Array"
+				fns.each do |fn|
+					if fn == "empty"
+					elsif fn == "json"
+					elsif fn == "string"
+					elsif fn == "int"
+					elsif fn.include?("regex")
+					elsif fn.include?("length")
+					elsif fn.include?("fields")
+					
+					end
+				end
+			end
 		end
 	end
+
+	def verify_empty(v)
+		
+	end
+
+
 end
