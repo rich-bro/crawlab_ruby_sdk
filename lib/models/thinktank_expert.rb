@@ -1,3 +1,36 @@
 class ThinktankExpert
 	attr_accessor :id
+	attr_accessor :site_name
+	attr_accessor :site_name_cn
+	attr_accessor :domain
+	attr_accessor :title
+	attr_accessor :location
+	attr_accessor :content
+	attr_accessor :speaker
+	attr_accessor :speaker_desp
+	attr_accessor :hosted_name
+	attr_accessor :source
+	attr_accessor :country_cn
+	attr_accessor :country_code
+	attr_accessor :images
+	attr_accessor :files
+	attr_accessor :links
+	attr_accessor :videos
+	attr_accessor :audios
+	attr_accessor :customer_category
+	attr_accessor :related_program
+	attr_accessor :start_time
+	attr_accessor :end_time
+	attr_accessor :created_at
+	attr_accessor :oss_images
+	attr_accessor :views
+	attr_accessor :comments
+	attr_accessor :sub_type
+	attr_accessor :tags
+	attr_accessor :cooperate_organizers
+	attr_accessor :lang
+	attr_accessor :timezone
+	attr_accessor :timezone_location
+	attr_accessor :speaker_hash
+	attr_accessor :topics
 end
