@@ -1,0 +1,2 @@
+class ThinktankInformation
+end

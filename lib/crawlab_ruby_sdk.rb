@@ -14,9 +14,7 @@ dir = File.expand_path("..", __FILE__)
 # puts dir
 
 traverse_dir(dir+'/entity/stream_message_code_pb.rb')
-traverse_dir(dir+'/entity/result_pb.rb')
 traverse_dir(dir+'/entity/stream_message_pb.rb')
-traverse_dir(dir+'/entity/stream_message_data_task_pb.rb')
 traverse_dir(dir+'/client')
 
 module CrawlabRubySdk
