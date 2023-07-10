@@ -10,6 +10,11 @@ def main
 
 	CrawlabRubySdk.save_item(a)
 
+	# CrawlabRubySdk.save_item(a,"thinktank_experts")
+	# CrawlabRubySdk.save_item(a,"thinktank_expert_reports")
+	# CrawlabRubySdk.save_item(a,"thinktank_informations")
+	# CrawlabRubySdk.save_item(a,"thinktank_reports")
+
 	item = {
 		"id":                "dec9d5415409cc9275f5590c145c3ccf",
 		"title":             "Association of Selected State Policies and Requirements for Buprenorphine Treatment With Per Capita Months of Treatment",
