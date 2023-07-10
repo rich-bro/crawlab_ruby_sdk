@@ -41,7 +41,40 @@ class ThinktankExpert < BaseModel
 	
 
 	def initialize(options={})
-		
+		options = JSON.parse(options.to_json)
+		@id = options["id"]
+		@name = options["name"]
+		@title = options["title"]
+		@content = options["content"]
+		@location = options["location"]
+		@area_of_expertise = options["area_of_expertise"]
+		@profile_images = options["profile_images"]
+		@phone = options["phone"]
+		@email = options["email"]
+		@link = options["link"]
+		@audios = options["audios"]
+		@videos = options["videos"]
+		@education = options["education"]
+		@related_topics = options["related_topics"]
+		@site_name = options["site_name"]
+		@site_name_cn = options["site_name_cn"]
+		@domain = options["domain"]
+		@created_at = options["created_at"]
+		@updated_at = options["updated_at"]
+		@source = options["source"]
+		@oss_profile_images = options["oss_profile_images"]
+		@facebook = options["facebook"]
+		@twitter = options["twitter"]
+		@linkedin = options["linkedin"]
+		@instagram = options["instagram"]
+		@wikidata = options["wikidata"]
+		@person_type = options["person_type"]
+		@files = options["files"]
+		@oss_files = options["oss_files"]
+		@associated_program = options["associated_program"]
+		@lang = options["lang"]
+		@website = options["website"]
+		@nationalities = options["nationalities"]
 	end
 
 	def as_json

@@ -57,7 +57,7 @@ module CrawlabRubySdk
     if auth==nil || auth == ""
       auth = "Crawlab2021!"
     end  
-    if !Verify.IsVerified?([item],table_name)
+    if !Verify.IsVerified?(items,table_name)
       return
     end    
     
@@ -99,8 +99,9 @@ module CrawlabRubySdk
 
     data = {task_id: task_id,data:records}.to_json.b
 
+    puts "=====#{{task_id: task_id,data:records}.to_json}==="
+
     msg = Grpc::StreamMessage.new(code:3,data:data)
-    puts data
 
     # sub_client.Send([msg]) 
   end

@@ -3,6 +3,10 @@ class Verify
 
 		if table_name == "" && items.size > 0
 			table_name = switch_table(items[0])
+		elsif table_name != "" && items.size > 0 
+			if !match_fields?(items[0],table_name)
+				return
+			end
 		end
 
 		if table_name == ""
@@ -48,6 +52,42 @@ class Verify
 		end
 
 		return table_name
+	end
+
+	def self.match_fields?(item={},table_name)
+		if table_name == nil || table_name == ""
+			return false
+		end
+		item_keys = JSON.parse(item.to_json).keys
+		v = $map_models[table_name]
+
+		if v == nil 
+			puts "ERROR #{table_name} not Exist!"
+			return false
+		end
+
+		klass = Object.const_get v
+		klass_keys = klass.fields
+
+		# puts "----#{klass_keys}--"
+		sub_keys1 = item_keys - klass_keys
+		if sub_keys1.size > 0
+			puts "ERROR #{sub_keys1} do not belong #{table_name}"
+			return false
+		end
+
+		sub_keys2 = klass_keys - item_keys
+		if sub_keys2.size > 0
+			puts "ERROR #{sub_keys2} do not Exist!"
+			return false
+		end
+
+		return true
+
+	end
+
+	def self.table_names
+		return $map_models.keys
 	end
 
 end
