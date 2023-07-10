@@ -18,6 +18,7 @@ traverse_dir(dir+'/entity/stream_message_pb.rb')
 traverse_dir(dir+'/client')
 traverse_dir(dir+'/models/base.rb')
 traverse_dir(dir+'/models')
+traverse_dir(dir+'/verify')
 
 module CrawlabRubySdk
   class Error < StandardError; end
@@ -34,6 +35,10 @@ module CrawlabRubySdk
     if auth==nil || auth == ""
       auth = "Crawlab2021!"
     end  
+
+    if !Verify.IsVerified([item],table_name)
+      return
+    end
     
     client = TaskServiceClient.new(address,auth)
 
@@ -52,6 +57,9 @@ module CrawlabRubySdk
     if auth==nil || auth == ""
       auth = "Crawlab2021!"
     end  
+    if !Verify.IsVerified([item],table_name)
+      return
+    end    
     
     client = TaskServiceClient.new(address,auth)
 
