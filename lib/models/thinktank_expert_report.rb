@@ -1,2 +1,40 @@
 class ThinktankExpertReport
+	attr_accessor :id
+	attr_accessor :title
+	attr_accessor :site_name
+	attr_accessor :site_name_cn
+	attr_accessor :abstract
+	attr_accessor :content
+	attr_accessor :author_names
+	attr_accessor :source
+	attr_accessor :files
+	attr_accessor :images
+	attr_accessor :videos
+	attr_accessor :audios
+	attr_accessor :links
+	attr_accessor :domain
+	attr_accessor :keywords
+	attr_accessor :html_content
+	attr_accessor :lang
+	attr_accessor :country_cn
+	attr_accessor :country_code
+	attr_accessor :created_at
+	attr_accessor :updated_at
+	attr_accessor :created_time
+	attr_accessor :oss_files
+	attr_accessor :oss_images
+	attr_accessor :customer_category
+	attr_accessor :category
+	attr_accessor :topics
+	attr_accessor :tags
+	attr_accessor :views
+	attr_accessor :comments
+	attr_accessor :reference
+	attr_accessor :mention_country
+	attr_accessor :authors
+	attr_accessor :sub_title
+	attr_accessor :timezone
+	attr_accessor :timezone_location
+
+
 end
