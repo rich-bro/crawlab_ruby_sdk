@@ -85,6 +85,7 @@ class BaseModel
 		rescue StandardError => e
 			return false
 		end
+		return true
 	end
 
 	def verify_string(v)

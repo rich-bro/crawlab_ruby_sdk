@@ -54,6 +54,7 @@ class ThinktankExpertReport < BaseModel
 		@files = options["files"]
 		@images = options["images"]
 		@videos = options["videos"]
+		@audios = options["audios"]
 		@links = options["links"]
 		@domain = options["domain"]
 		@keywords= options["keywords"]
