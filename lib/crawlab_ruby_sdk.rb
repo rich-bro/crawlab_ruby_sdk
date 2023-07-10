@@ -36,7 +36,7 @@ module CrawlabRubySdk
       auth = "Crawlab2021!"
     end  
 
-    if !Verify.IsVerified([item],table_name)
+    if !Verify.IsVerified?([item],table_name)
       return
     end
     
@@ -57,7 +57,7 @@ module CrawlabRubySdk
     if auth==nil || auth == ""
       auth = "Crawlab2021!"
     end  
-    if !Verify.IsVerified([item],table_name)
+    if !Verify.IsVerified?([item],table_name)
       return
     end    
     

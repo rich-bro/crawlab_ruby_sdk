@@ -90,4 +90,36 @@ class ThinktankReport < BaseModel
 			timezone_location: @timezone_location
 		}
 	end
+
+	def self.verify_keys
+		return {
+			"id"=>            ["empty", "string"],
+			"title"=>         ["empty", "string"],
+			"site_name"=>     ["empty", "string"],
+			"site_name_cn"=>  ["empty", "string"],
+			"content"=>       ["empty", "string"],
+			"source"=>        ["empty", "string"],
+			"files"=>         ["json", "string"],
+			"images"=>        ["json", "string"],
+			"videos"=>        ["json", "string"],
+			"audios"=>        ["json", "string"],
+			"links"=>         ["json", "string"],
+			"domain"=>        ["empty", "string"],
+			"keywords"=>      ["json", "string"],
+			"lang"=>          ["empty", "string"],
+			"country_cn"=>    ["empty", "string"],
+			"country_code"=>  ["empty", "string"],
+			"created_at"=>    ["empty", "int", "length:13"],
+			"updated_at"=>    ["empty", "int", "length:13"],
+			"created_time"=>  ["empty", "int", "length:10"],
+			"oss_files"=>     ["json", "string"],
+			"oss_images"=>    ["json", "string"],
+			"topics"=>        ["json", "string"],
+			"tags"=>          ["string", "json"],
+			"authors"=>       ["json", "fields:author_id,author_name,author_url", "string"],
+			"timezone"=>      ["empty", `regex:[\+|-]\d{4}`, "string"],
+			"timezone_location"=> ["empty", "string"],	
+		}
+	end
+
 end

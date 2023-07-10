@@ -85,4 +85,23 @@ class ThinktankExpert < BaseModel
 	def to_json
 		return as_json.to_json
 	end
+
+	def self.verify_keys
+		return {
+			"id"=>          ["empty", "string"],
+			"title"=>       ["json", "string"],
+			"name"=>        ["empty", "string"],
+			"site_name_cn"=>["empty", "string"],
+			"site_name"=>   ["empty", "string"],
+			"source"=>      ["empty", "string"],
+			"audios"=>      ["json", "string"],
+			"videos"=>      ["json", "string"],
+			"related_topics"=>["json", "string"],
+			"files"=>       ["json", "string"],
+			"oss_files"=>   ["json", "string"],
+			"domain"=>      ["empty", "string"],
+			"created_at"=>  ["empty", "int", "length:13"],
+			"updated_at"=>  ["empty", "int", "length:13"],			
+		}
+	end
 end

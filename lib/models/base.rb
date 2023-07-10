@@ -1,10 +1,5 @@
-# require 'thinktank_expert'
-# map_models = {
-# 	ThinktankExpert.table_name => {kclass: ThinktankExpert,keys:[]},
-# 	ThinktankExpertReport.table_name => {kclass: ThinktankExpertReport,keys:[]},
-# 	ThinktankInformation.table_name => {kclass: ThinktankInformation,keys:[]},
-# 	ThinktankReport.table_name => {kclass: ThinktankReport,keys:[]},
-# }
+require 'json'
+
 $map_models = {}
 class BaseModel
 	def self.table_name
@@ -16,7 +11,7 @@ class BaseModel
 	end
 
 	def self.fields
-		self.new({}).as_json.keys
+		JSON.parse(self.new({}).as_json.to_json).keys
 	end
 
 	def as_json
