@@ -39,6 +39,19 @@ Or install it yourself as:
     puts bucket_url 
 ```
 
+##### 字段验证规则
+
+```
+ CrawlabRubySdk.save_item({name: "haha",age:12},table_name)
+ CrawlabRubySdk.save_items([{name: "haha",age:12},{name:"456",age:34}],table_name)
+ table_name 可以是这几个["thinktank_expert_reports", "thinktank_informations", "thinktank_experts", "thinktank_reports"] 中的一个,也可以不传递
+
+ 1、如果当前采集的结果 存储的数据表是上面几个中的一个，无论是否传递，都会按照对应的表结构的 字段规则验证字段
+ 2、如果当前采集的结果，存储的数据表不属于上面几个中的一个，则按照传递传递的table_name，对应的字段规则验证字段
+ 3、如果没有传递table_name,并且采集的结果存储临时表，则根据推送的结果的字段匹配 上面四个表的字段，匹配上了就按照匹配上的表结构的字段规则验证，没有匹配上则不验证
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
