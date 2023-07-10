@@ -14,7 +14,20 @@ class BaseModel
 		JSON.parse(self.new({}).as_json.to_json).keys
 	end
 
+	def self.verify_keys
+		return {}
+	end
+
 	def as_json
 		{}
+	end
+
+	def verify
+		json_data = as_json
+		verify_keys = self.class.verify_keys
+
+		verify_keys.each do |key,fns|
+			
+		end
 	end
 end
