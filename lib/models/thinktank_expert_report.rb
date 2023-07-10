@@ -1,4 +1,4 @@
-class ThinktankExpertReport
+class ThinktankExpertReport < BaseModel
 	attr_accessor :id
 	attr_accessor :title
 	attr_accessor :site_name
@@ -39,6 +39,7 @@ class ThinktankExpertReport
 	def self.table_name
 		return "thinktank_expert_reports"
 	end
+	register
 
 	def initialize(options={})
 		

@@ -16,6 +16,7 @@ dir = File.expand_path("..", __FILE__)
 traverse_dir(dir+'/entity/stream_message_code_pb.rb')
 traverse_dir(dir+'/entity/stream_message_pb.rb')
 traverse_dir(dir+'/client')
+traverse_dir(dir+'/models/base.rb')
 traverse_dir(dir+'/models')
 
 module CrawlabRubySdk
@@ -23,7 +24,7 @@ module CrawlabRubySdk
   # Your code goes here...
 
   
-  def self.save_item(item={})
+  def self.save_item(item={},table_name="")
     address = ENV["CRAWLAB_GRPC_ADDRESS"]
     if address==nil || address == ""
       address = "localhost:9666"
@@ -41,7 +42,7 @@ module CrawlabRubySdk
     save(sub_client,[item])
   end
 
-  def self.save_items(items=[])
+  def self.save_items(items=[],table_name="")
     address = ENV["CRAWLAB_GRPC_ADDRESS"]
     if address==nil || address == ""
       address = "localhost:9666"
@@ -89,15 +90,11 @@ module CrawlabRubySdk
     end
 
     data = {task_id: task_id,data:records}.to_json.b
-    # data = data.encode("utf-8")
-    # puts data
-
-    # data = data.encode('ASCII-8BIT', invalid: :replace, undef: :replace, replace: '')
-    # puts data
 
     msg = Grpc::StreamMessage.new(code:3,data:data)
+    puts data
 
-    sub_client.Send([msg]) 
+    # sub_client.Send([msg]) 
   end
 
   def self.get_task_id
