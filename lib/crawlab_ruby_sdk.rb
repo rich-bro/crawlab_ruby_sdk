@@ -36,6 +36,7 @@ module CrawlabRubySdk
       auth = "Crawlab2021!"
     end  
 
+    table_name = get_table_name(table_name)
     if !Verify.IsVerified?([item],table_name)
       return
     end
@@ -57,6 +58,8 @@ module CrawlabRubySdk
     if auth==nil || auth == ""
       auth = "Crawlab2021!"
     end  
+
+    table_name = get_table_name(table_name)
     if !Verify.IsVerified?(items,table_name)
       return
     end    
@@ -103,7 +106,7 @@ module CrawlabRubySdk
 
     msg = Grpc::StreamMessage.new(code:3,data:data)
 
-    # sub_client.Send([msg]) 
+    sub_client.Send([msg]) 
   end
 
   def self.get_task_id
@@ -120,5 +123,15 @@ module CrawlabRubySdk
 
   def self.save_file_stream_to_oss(oss_path,stream)
     OssServerClient.new.send_stream(oss_path,stream)
+  end
+
+  def self.get_table_name(table_name="")
+    table_names = Verify.table_names
+    if ENV["TABLE_NAME"] != nil && ENV["TABLE_NAME"] != "" && table_names.include?(ENV["TABLE_NAME"])
+      table_name = ENV["TABLE_NAME"]
+      return table_name
+    end 
+
+    return table_name
   end
 end
