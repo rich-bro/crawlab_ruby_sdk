@@ -82,9 +82,6 @@ class ThinktankInformation < BaseModel
 		@sub_title = options["sub_title"]
 		@timezone = options["timezone"]
 		@timezone_location = options["timezone_location"]
-
-
-
 	end
 
 	def as_json

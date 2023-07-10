@@ -43,7 +43,43 @@ class ThinktankReport < BaseModel
 
 
 	def initialize(options = {})
-		
+		options = JSON.parse(options.to_json)
+		@id = options["id"]
+		@title = options["title"]
+		@site_name = options["site_name"]
+		@site_name_cn = options["site_name_cn"]
+		@abstract = options["abstract"]
+		@content = options["content"]
+		@author_names = options["author_names"]
+		@source = options["source"]
+		@files = options["files"]
+		@images = options["images"]
+		@videos = options["videos"]
+		@audios = options["audios"]
+		@links = options["links"]
+		@domain = options["domain"]
+		@keywords = options["keywords"]
+		@html_content = options["html_content"]
+		@lang = options["lang"]
+		@country_cn = options["country_cn"]
+		@country_code = options["country_code"]
+		@created_at = options["created_at"]
+		@updated_at = options["updated_at"]
+		@created_time = options["created_time"]
+		@oss_files = options["oss_files"]
+		@oss_images = options["oss_images"]
+		@customer_category = options["customer_category"]
+		@category = options["category"]
+		@topics = options["topics"]
+		@tags = options["tags"]
+		@views = options["views"]
+		@comments = options["comments"]
+		@reference = options["reference"]
+		@mention_country = options["mention_country"]
+		@authors = options["authors"]
+		@sub_title = options["sub_title"]
+		@timezone = options["timezone"]
+		@timezone_location = options["timezone_location"]
 	end
 
 	def to_json
