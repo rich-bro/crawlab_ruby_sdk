@@ -1,36 +1,36 @@
 class ThinktankExpert
 	attr_accessor :id
+	attr_accessor :name
+	attr_accessor :title
+	attr_accessor :content
+	attr_accessor :location
+	attr_accessor :area_of_expertise
+	attr_accessor :profile_images
+	attr_accessor :phone
+	attr_accessor :email
+	attr_accessor :link
+	attr_accessor :audios
+	attr_accessor :videos
+	attr_accessor :education
+	attr_accessor :related_topics
 	attr_accessor :site_name
 	attr_accessor :site_name_cn
 	attr_accessor :domain
-	attr_accessor :title
-	attr_accessor :location
-	attr_accessor :content
-	attr_accessor :speaker
-	attr_accessor :speaker_desp
-	attr_accessor :hosted_name
-	attr_accessor :source
-	attr_accessor :country_cn
-	attr_accessor :country_code
-	attr_accessor :images
-	attr_accessor :files
-	attr_accessor :links
-	attr_accessor :videos
-	attr_accessor :audios
-	attr_accessor :customer_category
-	attr_accessor :related_program
-	attr_accessor :start_time
-	attr_accessor :end_time
 	attr_accessor :created_at
-	attr_accessor :oss_images
-	attr_accessor :views
-	attr_accessor :comments
-	attr_accessor :sub_type
-	attr_accessor :tags
-	attr_accessor :cooperate_organizers
+	attr_accessor :updated_at
+	attr_accessor :source
+	attr_accessor :oss_profile_images
+	attr_accessor :facebook
+	attr_accessor :twitter
+	attr_accessor :linkedin
+	attr_accessor :instagram
+	attr_accessor :wikidata
+	attr_accessor :person_type
+	attr_accessor :files
+	attr_accessor :oss_files
+	attr_accessor :associated_program
 	attr_accessor :lang
-	attr_accessor :timezone
-	attr_accessor :timezone_location
-	attr_accessor :speaker_hash
-	attr_accessor :topics
+	attr_accessor :website
+	attr_accessor :nationalities
+	
 end
