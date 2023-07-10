@@ -125,7 +125,7 @@ class BaseModel
 			return false
 		end
 
-		if v =~ Regexp.new regex_str
+		if v =~ Regexp.new(regex_str)
 		  return true
 		else
 			return false

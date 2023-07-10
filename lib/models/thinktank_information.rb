@@ -119,7 +119,7 @@ class ThinktankInformation < BaseModel
 			"topics"=>        ["json", "string"],
 			"tags"=>          ["string", "json"],
 			"authors"=>       ["json", "fields:author_id,author_name,author_url", "string"],
-			"timezone"=>      ["empty", `regex:[\+|-]\d{4}`, "string"],
+			"timezone"=>      ["empty", 'regex:[\+|-]\d{4}', "string"],
 			"timezone_location"=> ["empty", "string"],	
 		}
 	end	
