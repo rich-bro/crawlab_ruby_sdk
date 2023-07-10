@@ -69,9 +69,22 @@ class ThinktankInformation < BaseModel
 		@updated_at = options["updated_at"]
 		@created_time = options["created_time"]
 		@oss_files = options["oss_files"]
+		@oss_images = options["oss_images"]
+		@customer_category = options["customer_category"]
+		@category = options["category"]
+		@topics = options["topics"]
+		@tags = options["tags"]
+		@views = options["views"]
+		@comments = options["comments"]
+		@reference = options["reference"]
+		@mention_country = options["mention_country"]
+		@authors = options["authors"]
+		@sub_title = options["sub_title"]
+		@timezone = options["timezone"]
+		@timezone_location = options["timezone_location"]
 
 
-		
+
 	end
 
 	def as_json
