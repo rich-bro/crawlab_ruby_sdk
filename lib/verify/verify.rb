@@ -11,13 +11,22 @@ class Verify
 			puts "验证：#{table_name}"
 		end
 
-		kclass = Object.const_get $map_models[table_name]
+		if table_name != ""
+			kclass = Object.const_get $map_models[table_name]
 
-		items.each do |item|
-			if !kclass.new(item).verify
-				return false
+			if kclass == nil
+				puts "ERROR #{table_name} 验证 not Exist!"
+				return true
 			end
+
+			items.each do |item|
+				if !kclass.new(item).verify
+					return false
+				end
+			end			
 		end
+
+
 		return true
 	end
 
