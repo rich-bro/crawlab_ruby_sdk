@@ -32,5 +32,53 @@ class ThinktankExpert
 	attr_accessor :lang
 	attr_accessor :website
 	attr_accessor :nationalities
-	
+
+	def self.table_name
+		return "thinktank_experts"
+	end
+	def initialize(options={})
+		
+	end
+
+	def as_json
+		return {
+			id: @id,
+			name: @name,
+			title: @title,
+			content: @content,
+			location: @location,
+			area_of_expertise: @area_of_expertise,
+			profile_images: @profile_images,
+			phone: @phone,
+			email: @email,
+			link: @link,
+			audios: @audios,
+			videos: @videos,
+			education: @education,
+			related_topics: @related_topics,
+			site_name: @site_name,
+			site_name_cn: @site_name_cn,
+			domain: @domain,
+			created_at: @created_at,
+			updated_at: @updated_at,
+			source: @source,
+			oss_profile_images: @oss_profile_images,
+			facebook: @facebook,
+			twitter: @twitter,
+			linkedin: @linkedin,
+			instagram: @instagram,
+			wikidata: @wikidata,
+			person_type: @person_type,
+			files: @files,
+			oss_files: @oss_files,
+			associated_program: @associated_program,
+			lang: @lang,
+			website: @website,
+			nationalities: @nationalities,
+		}
+	end
+
+	def to_json
+		return as_json.to_json
+	end
 end

@@ -37,4 +37,56 @@ class ThinktankInformation
 	attr_accessor :timezone
 	attr_accessor :timezone_location
 
+	def self.table_name
+		return "thinktank_informations"
+	end
+	def initialize(options={})
+		
+	end
+
+	def as_json
+		return {
+			id: @id,
+			title: @title,
+			site_name: @site_name,
+			site_name_cn: @site_name_cn,
+			abstract: @abstract,
+			content: @content,
+			author_names: @author_names,
+			state_info: @state_info,
+			source: @source,
+			files: @files,
+			images: @images,
+			videos: @videos,
+			links: @links,
+			domain: @domain,
+			keywords: @keywords,
+			html_content: @html_content,
+			lang: @lang,
+			country_cn: @country_cn,
+			country_code: @country_code,
+			created_at: @created_at,
+			updated_at: @updated_at,
+			created_time: @created_time,
+			oss_files: @oss_files,
+			oss_images: @oss_images,
+			customer_category: @customer_category,
+			category: @category,
+			topics: @topics,
+			tags: @tags,
+			views: @views,
+			comments: @comments,
+			reference: @reference,
+			mention_country: @mention_country,
+			authors: @authors,
+			sub_title: @sub_title,
+			timezone: @timezone,
+			timezone_location: @timezone_location
+
+		}
+	end
+
+	def to_json
+		return as_json.to_json
+	end
 end

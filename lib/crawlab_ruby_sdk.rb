@@ -1,4 +1,4 @@
-require "crawlab_ruby_sdk/version"
+# require "crawlab_ruby_sdk/version"
 require "grpc"
 require "json"
 def traverse_dir(file_path)
@@ -16,6 +16,7 @@ dir = File.expand_path("..", __FILE__)
 traverse_dir(dir+'/entity/stream_message_code_pb.rb')
 traverse_dir(dir+'/entity/stream_message_pb.rb')
 traverse_dir(dir+'/client')
+traverse_dir(dir+'/models')
 
 module CrawlabRubySdk
   class Error < StandardError; end

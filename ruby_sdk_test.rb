@@ -50,7 +50,6 @@ def main
 	}
 	CrawlabRubySdk.save_item(item)
 
-
 end
 
-main
+# main
