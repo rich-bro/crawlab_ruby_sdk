@@ -18,6 +18,8 @@ traverse_dir(dir+'/entity/stream_message_pb.rb')
 traverse_dir(dir+'/client')
 traverse_dir(dir+'/models/base.rb')
 traverse_dir(dir+'/models')
+traverse_dir(dir+'/models/thinktank_expert.rb')
+traverse_dir(dir+'/models/thinktank_information.rb')
 traverse_dir(dir+'/verify')
 
 module CrawlabRubySdk
