@@ -3,6 +3,7 @@ class Verify
 
 		if table_name == "" && items.size > 0
 			table_name = switch_table(items[0])
+			puts "验证：#{table_name}"
 		elsif table_name != "" && items.size > 0 
 			puts "验证：#{table_name}"
 			if !match_fields?(items[0],table_name)
