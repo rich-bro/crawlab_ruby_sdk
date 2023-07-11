@@ -102,7 +102,7 @@ module CrawlabRubySdk
 
     data = {task_id: task_id,data:records}.to_json.b
 
-    puts "=====#{{task_id: task_id,data:records}.to_json}==="
+    # puts "=====#{{task_id: task_id,data:records}.to_json}==="
 
     msg = Grpc::StreamMessage.new(code:3,data:data)
 
