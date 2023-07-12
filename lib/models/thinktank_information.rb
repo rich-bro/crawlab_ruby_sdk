@@ -98,6 +98,7 @@ class ThinktankInformation < BaseModel
 			files: @files,
 			images: @images,
 			videos: @videos,
+			audios: @audios,
 			links: @links,
 			domain: @domain,
 			keywords: @keywords,
