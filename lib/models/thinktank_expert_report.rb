@@ -35,6 +35,9 @@ class ThinktankExpertReport < BaseModel
 	attr_accessor :sub_title
 	attr_accessor :timezone
 	attr_accessor :timezone_location
+	attr_accessor :related_authors
+	attr_accessor :related_author_names
+	attr_accessor :from_author_url
 
 	def self.table_name
 		return "thinktank_expert_reports"
@@ -79,6 +82,9 @@ class ThinktankExpertReport < BaseModel
 		@sub_title = options["sub_title"]
 		@timezone = options["timezone"]
 		@timezone_location = options["timezone_location"]
+		@related_authors = options["related_authors"]
+		@related_author_names = options["related_author_names"]
+		@from_author_url = options["from_author_url"]
 	end
 
 	def as_json
@@ -119,6 +125,9 @@ class ThinktankExpertReport < BaseModel
 			sub_title: @sub_title,
 			timezone: @timezone,
 			timezone_location: @timezone_location,
+			related_authors: @related_authors,
+			related_author_names: @related_author_names,
+			from_author_url: @from_author_url,
 		}
 	end
 
@@ -154,6 +163,8 @@ class ThinktankExpertReport < BaseModel
 			"authors"=>       ["json", "fields:author_id,author_name,author_url", "string"],
 			"timezone"=>      ["empty", 'regex:[\+|-]\d{4}', "string"],
 			"timezone_location"=> ["empty", "string"],	
+			"from_author_url" => ["empty","string"],
+			"related_authors" => ["json","string"],
 		}
 	end	
 
