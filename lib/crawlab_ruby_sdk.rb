@@ -21,6 +21,7 @@ traverse_dir(dir+'/models')
 traverse_dir(dir+'/models/thinktank_expert.rb')
 traverse_dir(dir+'/models/thinktank_information.rb')
 traverse_dir(dir+'/verify')
+traverse_dir(dir+'/client/oss_server_client.rb')
 
 module CrawlabRubySdk
   class Error < StandardError; end

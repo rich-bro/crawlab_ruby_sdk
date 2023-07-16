@@ -42,19 +42,23 @@ class OssServerClient
 	end
 
 	def send(oss_path,file_path)
-		if bucket == nil || @oss_client == nil
+		if @bucket == nil || @oss_client == nil
 			return "bucket is nil"
 		end
-		bucket.put_object(oss_path, :file => file_path)
+		@bucket.put_object(oss_path, :file => file_path)
 
-		bucket_url = bucket.object_url(oss_path)
+		bucket_url = @bucket.object_url(oss_path)
 		return bucket_url
 	end
 
 	def send_stream(oss_path,stream)
-		bucket.put_object(oss_path){ |a| a << stream }
+		if @bucket == nil || @oss_client == nil
+			return "bucket is nil"
+		end
 
-		bucket_url = bucket.object_url(oss_path)
+		@bucket.put_object(oss_path){ |a| a << stream }
+
+		bucket_url = @bucket.object_url(oss_path)
 		return bucket_url		
 	end
 end
