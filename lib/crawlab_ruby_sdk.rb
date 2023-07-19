@@ -1,6 +1,11 @@
 # require "crawlab_ruby_sdk/version"
 require "grpc"
 require "json"
+require "faraday"
+require 'therubyracer'
+require "nokogiri"
+require "rest-client"
+require "active_support"
 def traverse_dir(file_path)
   if File.directory? file_path
     Dir.foreach(file_path){|file| traverse_dir(file_path+"/"+file) if file!="." and file!=".." }

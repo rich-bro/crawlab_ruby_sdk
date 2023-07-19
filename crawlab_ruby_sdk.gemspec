@@ -15,8 +15,11 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'google-protobuf','~> 3.23.2'
   spec.add_dependency 'json','~> 2.6.3'
   spec.add_dependency 'aliyun-sdk','~> 0.8.0'
-  # spec.add_dependency 'rest-client'
-  # spec.add_dependency 'nokogiri'
+  spec.add_dependency 'rest-client', '~> 2.1.0'
+  spec.add_dependency 'nokogiri','~> 1.15.3'
+  spec.add_dependency 'therubyracer','~> 0.12.3'
+  spec.add_dependency 'faraday','~> 2.7.10'
+  spec.add_dependency 'activesupport','~> 7.0.6'
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
