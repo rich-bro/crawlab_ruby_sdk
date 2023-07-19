@@ -20,6 +20,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'therubyracer','~> 0.12.3'
   spec.add_dependency 'faraday','~> 2.7.10'
   spec.add_dependency 'activesupport','~> 7.0.6'
+  spec.add_dependency 'hpricot','~> 0.8.6'
+  spec.add_dependency 'htmlentities','~> 4.3.4'
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 

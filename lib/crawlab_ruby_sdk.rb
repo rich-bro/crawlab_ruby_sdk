@@ -6,6 +6,9 @@ require 'therubyracer'
 require "nokogiri"
 require "rest-client"
 require "active_support"
+require "htmlentities"
+require "hpricot"
+
 def traverse_dir(file_path)
   if File.directory? file_path
     Dir.foreach(file_path){|file| traverse_dir(file_path+"/"+file) if file!="." and file!=".." }
