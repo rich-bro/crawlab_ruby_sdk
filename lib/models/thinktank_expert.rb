@@ -134,7 +134,8 @@ class ThinktankExpert < BaseModel
 			"oss_files"=>   ["json", "string"],
 			"domain"=>      ["empty", "string"],
 			"created_at"=>  ["empty", "int", "length:13"],
-			"updated_at"=>  ["empty", "int", "length:13"],			
+			"updated_at"=>  ["empty", "int", "length:13"],		
+			"area_of_expertise" => ["json", "string"],	
 		}
 	end
 end
