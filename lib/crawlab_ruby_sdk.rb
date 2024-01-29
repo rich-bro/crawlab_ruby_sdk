@@ -36,7 +36,7 @@ module CrawlabRubySdk
   # Your code goes here...
 
   
-  def self.save_item(item={},table_name="")
+  def self.save_item(item={},table_name="",use_gzip=true)
     address = ENV["CRAWLAB_GRPC_ADDRESS"]
     if address==nil || address == ""
       address = "localhost:9666"
@@ -52,14 +52,14 @@ module CrawlabRubySdk
       return
     end
     
-    client = TaskServiceClient.new(address,auth)
+    client = TaskServiceClient.new(address,auth,use_gzip)
 
     sub_client = client.subscribe
 
     save(sub_client,[item])
   end
 
-  def self.save_items(items=[],table_name="")
+  def self.save_items(items=[],table_name="",use_gzip=true)
     address = ENV["CRAWLAB_GRPC_ADDRESS"]
     if address==nil || address == ""
       address = "localhost:9666"
@@ -75,7 +75,7 @@ module CrawlabRubySdk
       return
     end    
     
-    client = TaskServiceClient.new(address,auth)
+    client = TaskServiceClient.new(address,auth,use_gzip)
 
     sub_client = client.subscribe
 

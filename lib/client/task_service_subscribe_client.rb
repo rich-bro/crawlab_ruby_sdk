@@ -2,8 +2,14 @@ class TaskServiceSubscribeClient
 	attr_accessor :stub
 	attr_accessor :metadata
 
-	def initialize(address,auth)
-		@stub = GRPC::ClientStub.new(address,:this_channel_is_insecure)
+	def initialize(address,auth,use_gzip=true)
+		compression_options =
+      GRPC::Core::CompressionOptions.new(default_algorithm: :gzip,default_level: :high)
+    compression_channel_args = compression_options.to_channel_arg_hash
+    if !use_gzip
+    	compression_channel_args = {}
+    end
+		@stub = GRPC::ClientStub.new(address,:this_channel_is_insecure,channel_args:compression_channel_args)
 		@metadata = {"authorization": auth}
 
 	end
@@ -34,7 +40,7 @@ class TaskServiceSubscribeClient
 		# obj = StreamMessage.new(a)
 		# return obj
 
-		return Grpc::StreamMessage.decode(obj)
+		return Grpc::StreamMessage.decode(str)
 	end
 
 	def each
